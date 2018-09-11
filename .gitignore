@@ -1,3 +1,4 @@
 *.key
 *.key.pub
-
+*.key.priv
+*.key.priv.pub
