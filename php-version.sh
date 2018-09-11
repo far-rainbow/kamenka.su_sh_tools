@@ -101,8 +101,8 @@ version_replace="###VERSION "$vers_set"
 <FilesMatch \"\.+\\\.ph(p[3457]?|t|tml)\$\">
 <If \"-f %{REQUEST_FILENAME}\">
 SetHandler \"proxy:unix:/run/php/php"$vers_set"-fpm.sock|fcgi://localhost\"
-</FilesMatch>
 </If>
+</FilesMatch>
 ######VERSION END"
 fi
 
