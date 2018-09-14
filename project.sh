@@ -1,4 +1,5 @@
 #!/bin/sh
+# срочно освежить, пароль убрать, зиму переделать в лето
 #########
 
 wwwdir=/var/www
@@ -34,7 +35,7 @@ chmod 750 $wwwdir/$projectname
 
 echo "
 <VirtualHost *:80>
-    ServerName demo-$projectname.zimalab.com
+    ServerName $projectname.kamenka.su
 
     AssignUserID $username $username
 
