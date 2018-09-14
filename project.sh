@@ -9,7 +9,6 @@ read -p "Enter PROJECT name : " projectname
 read -p "Enter user name : " username
 
 password=$(pwgen -Bc 8 1)
-echo "MYSQL password is $password"
 
 ### PROJECT TEST
 
@@ -22,7 +21,7 @@ if [ $? -eq 0 ]; then
 
 ### MYSQL
 
-### mysql -uroot -p"lcPRWvds0" -e "create database $projectname; GRANT ALL PRIVILEGES ON $projectname.* TO $username@localhost IDENTIFIED BY '$password'";
+mysql --silent -uroot -p"lcPRWvds0" -e "create database $projectname; GRANT ALL PRIVILEGES ON $projectname.* TO $projectname@localhost IDENTIFIED BY '$password'";
 
 ### PROJECT DIR SETUP
 
@@ -35,7 +34,7 @@ chmod 750 $wwwdir/$projectname
 
 echo "
 <VirtualHost *:80>
-    ServerName $projectname.kamenka.su
+    ServerName demo-$projectname.zimalab.com
 
     AssignUserID $username $username
 
@@ -57,17 +56,31 @@ chown -R $username:$username $wwwdir/$projectname
 a2ensite $projectname.conf
 service apache2 reload
 
+### SAVE PROJECT INFO INTO USER STAT FILE
+
+echo "
+Proj:	$projectname
+db:	$projectname
+dbpass: $password
+
+" >> /root/stat/$username.txt
+
+cat /root/stat/$username.txt
+
+### ADD LINK TO WWW FOR USER
+
+ln -s $wwwdir/$projectname /home/$username
+
 ### USER TEST FI
 else
-        echo "USER $username not found! STOP."
+	echo "USER $username not found! STOP."
         exit 1
 fi
 
 ### PROJECT TEST FI
 else
-        echo "PROJECT $projectname already exist! STOP."
+	echo "PROJECT $projectname already exist! STOP."
 fi
 ### THE END
 
 echo "Done."
-
