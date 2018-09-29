@@ -8,3 +8,6 @@ bind '"\e[B": history-search-forward'
 # VERY USEFULL COLORING FOR THOSE WHO HAVE TONS OF CONSOLES IN USE
 PS1='\[\e]0;[\w]\a\r\e[1;38;5;118;48;5;16m\] \u \[\e[38;5;16;48;5;118m\] \h \[\e[0m\] \$'
 
+#
+# OF COURSE IT IS BETTER TO PLACE THIS IN ~/.bashrc or similar config!
+# make it yourself
