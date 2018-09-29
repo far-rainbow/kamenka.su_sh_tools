@@ -1,4 +1,4 @@
-#~/bin/sh
+#!/bin/sh
 
 # CSH FREEBSD-LIKE HISTORY (i prefer this becouse of FBSD youth)
 PROMPT_COMMAND='history -a'
