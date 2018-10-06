@@ -1,4 +1,6 @@
 #!/bin/sh
+# admin@kamenka.su
+# Скрипт добавляющий БСДшную хистори и приглашение
 
 # CSH FREEBSD-LIKE HISTORY (i prefer this becouse of FBSD youth)
 PROMPT_COMMAND='history -a'
