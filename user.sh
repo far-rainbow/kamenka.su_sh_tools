@@ -1,4 +1,5 @@
 #!/bin/bash
+# DEBIAN/UBUNTU VERSION !!!
 
 rsdir=/root
 keysdir=$rsdir/keys
