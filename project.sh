@@ -1,5 +1,6 @@
 #!/bin/sh
 # срочно освежить, пароль убрать, зиму переделать в лето
+# DEBIAN/UBUNTU VERSION !!!
 #########
 
 wwwdir=/var/www
