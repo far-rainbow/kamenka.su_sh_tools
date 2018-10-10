@@ -13,7 +13,7 @@ echo
 declare -A version
 num=1
 
-### PUT WHOLE DIR
+### PUT WHOLE DIR (!!!DEBIAN STYLE CONF!!!)
 files=(/etc/apache2/sites-enabled/*)
 
 ### GREP VERSIONS
